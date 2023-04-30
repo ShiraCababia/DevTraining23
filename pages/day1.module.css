@@ -19,10 +19,11 @@
   padding: 10px;
 }
 
-.column {
+.firstSection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .row {

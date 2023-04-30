@@ -36,6 +36,9 @@
 }
 
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: tomato;
   color: white;
   padding: 0.625rem;
@@ -44,7 +47,6 @@
   width: 9.375rem;
   height: 9.375rem;
   text-align: center;
-  line-height: 8.125rem;
   flex-shrink: 1;
   transition: box-shadow 250ms ease-in-out, background-color 0.5s ease-in-out;
 }

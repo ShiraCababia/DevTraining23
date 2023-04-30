@@ -5,18 +5,18 @@
 
 .header {
   background-color: lightblue;
-  padding: 10px;
+  padding: 0.625rem;
   font-size: 1.5rem;
 }
 
 .main {
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .section {
   background-color: lightgrey;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
 }
 
 .columnSection {
@@ -38,13 +38,13 @@
 .box {
   background-color: tomato;
   color: white;
-  padding: 10px;
-  margin: 10px;
+  padding: 0.625rem;
+  margin: 0.625rem;
   font-size: 1.125rem;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   text-align: center;
-  line-height: 130px;
+  line-height: 8.125rem;
   flex-shrink: 1;
 }
 

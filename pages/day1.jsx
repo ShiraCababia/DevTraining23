@@ -23,6 +23,8 @@ export default function Day1() {
           <div className={styles.rowSection}>
             <div className={styles.box}>Box 5</div>
             <div className={styles.box}>Box 5</div>
+            <div className={styles.box}>Box 5</div>
+            <div className={styles.box}>Box 5</div>
             <div className={styles.box}>Box 6</div>
             <div className={styles.box}>Box 7</div>
             <div className={styles.box}>Box 8</div>

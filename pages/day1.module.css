@@ -47,3 +47,10 @@
   line-height: 130px;
   flex-shrink: 1;
 }
+
+@media (max-width: 500px) {
+  .box {
+    background-color: rgb(0, 159, 106);
+    border-radius: 10px;
+  }
+}

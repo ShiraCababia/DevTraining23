@@ -13,7 +13,6 @@ function TaskList() {
 
   const onInputChange = (e) => {
     setInputValue(e.target.value);
-    console.log(e);
   };
 
   const openPopup = () => {
@@ -25,9 +24,13 @@ function TaskList() {
   };
 
   const addTask = () => {
-    // setTasks([...tasks, { id: tasks.length + 1, title: `Task ${tasks.length + 1}` }]);
-    setTasks([...tasks, { id: tasks.length + 1, title: inputValue }]);
+    setTasks([...tasks, { id: Date.now(), title: inputValue }]);
     setInputValue('');
+  };
+
+  const removeTask = (idToRemove) => {
+    console.log(idToRemove);
+    setTasks(tasks.filter((task) => task.id != idToRemove));
   };
 
   const instructionsText = `
@@ -57,11 +60,13 @@ function TaskList() {
       )}
       <ul className={styles.list}>
         {tasks.map((task) => (
-          <li key={task.id} className={styles.listItem}>{task.title}</li>
+          <div className={styles.itemContainer} key={task.id}>
+            <button className={styles.itemButton} title="Remove Item" onClick={() => { removeTask(task.id) }}>X</button>
+            <li className={styles.listItem}>{task.title}</li>
+          </div>
         ))}
       </ul>
       <input value={inputValue} onChange={onInputChange} />
-      {/* <div>{inputValue}</div> */}
       <button type="button" className={styles.addButton} onClick={addTask}>Add Task</button>
     </div>
   );

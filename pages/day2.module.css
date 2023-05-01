@@ -14,9 +14,35 @@
   padding: 0;
 }
 
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+}
+
 .listItem {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+}
+
+.itemButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.25rem;
+  padding-top: 2px;
+  color: black;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.itemButton:hover {
+  background-color: black;
+  color: whitesmoke;
+  cursor: pointer;
 }
 
 .addButton {

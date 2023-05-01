@@ -30,7 +30,7 @@ function TaskList() {
 
   const removeTask = (idToRemove) => {
     console.log(idToRemove);
-    setTasks(tasks.filter((task) => task.id != idToRemove));
+    setTasks(tasks.filter((task) => task.id !== idToRemove));
   };
 
   const instructionsText = `
@@ -61,7 +61,7 @@ function TaskList() {
       <ul className={styles.list}>
         {tasks.map((task) => (
           <div className={styles.itemContainer} key={task.id}>
-            <button className={styles.itemButton} title="Remove Item" onClick={() => { removeTask(task.id) }}>X</button>
+            <button type="button" className={styles.itemButton} title="Remove Item" onClick={() => { removeTask(task.id); }}>X</button>
             <li className={styles.listItem}>{task.title}</li>
           </div>
         ))}

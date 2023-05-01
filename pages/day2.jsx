@@ -9,6 +9,13 @@ function TaskList() {
   ]);
   const [showPopup, setShowPopup] = useState(false);
 
+  const [inputValue, setInputValue] = useState('');
+
+  const onInputChange = (e) => {
+    setInputValue(e.target.value);
+    console.log(e);
+  };
+
   const openPopup = () => {
     setShowPopup(true);
   };
@@ -18,7 +25,9 @@ function TaskList() {
   };
 
   const addTask = () => {
-    setTasks([...tasks, { id: tasks.length + 1, title: `Task ${tasks.length + 1}` }]);
+    // setTasks([...tasks, { id: tasks.length + 1, title: `Task ${tasks.length + 1}` }]);
+    setTasks([...tasks, { id: tasks.length + 1, title: inputValue }]);
+    setInputValue('');
   };
 
   const instructionsText = `
@@ -51,6 +60,8 @@ function TaskList() {
           <li key={task.id} className={styles.listItem}>{task.title}</li>
         ))}
       </ul>
+      <input value={inputValue} onChange={onInputChange} />
+      {/* <div>{inputValue}</div> */}
       <button type="button" className={styles.addButton} onClick={addTask}>Add Task</button>
     </div>
   );

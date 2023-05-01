@@ -7,3 +7,11 @@ body {
   font-weight: 400;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --lightBlack: rgb(32, 32, 32);
+  --lightPurple: #ecdeff;
+}

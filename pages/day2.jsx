@@ -4,9 +4,10 @@ import styles from './day2.module.css';
 
 function TaskList() {
   const [tasks, setTasks] = useState([
-    { id: 1, title: 'Learn React' },
-    { id: 2, title: 'Learn Next.js' },
+    { id: 1, title: 'Learn React', isDone: false },
+    { id: 2, title: 'Learn Next.js', isDone: false },
   ]);
+
   const [showPopup, setShowPopup] = useState(false);
 
   const [inputValue, setInputValue] = useState('');
@@ -32,6 +33,17 @@ function TaskList() {
     console.log(idToRemove);
     setTasks((tasksArr) => tasksArr.filter((task) => task.id !== idToRemove));
   };
+
+  const changeTaskIsDone = (idToChangeIsDone) => {
+    setTasks((tasksArr) => {
+      const taskArrCopy = [...tasksArr];
+      const taskIndex = taskArrCopy.findIndex((task) => task.id === idToChangeIsDone);
+      taskArrCopy[taskIndex].isDone = !taskArrCopy[taskIndex].isDone;
+      return taskArrCopy;
+    });
+  };
+
+  console.log('tasks', tasks);
 
   const instructionsText = `
   1. Add an input field for adding new tasks.
@@ -61,6 +73,7 @@ function TaskList() {
       <ul className={styles.list}>
         {tasks.map((task) => (
           <div className={styles.itemContainer} key={task.id}>
+            <input type="checkbox" onChange={() => changeTaskIsDone(task.id)} />
             <button type="button" className={styles.itemButton} title="Remove Item" onClick={() => removeTask(task.id)}>X</button>
             <li className={styles.listItem}>{task.title}</li>
           </div>
